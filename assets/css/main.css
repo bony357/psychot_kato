@@ -1,0 +1,30 @@
+.masthead {
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 500px) {
+  #logotext {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-center.brand-heading {
+    font-size: 2rem!important;
+  }
+}
+
+.nav-text {
+  color: rgb(62,41,31);
+  border-left: 2px solid rgb(62,41,31);
+  text-transform: none;
+}
+
+.text-primary {
+  color: rgb(245,205,126) !important;
+}
+
+h2 {
+  color: rgb(245,205,126);
+}
+

@@ -34,6 +34,39 @@
       if (isSafari) {
         document.documentElement.classList.add('safari-device');
       }
+      
+      // Function to fix masthead backgrounds on iOS/Safari
+      function fixMastheadBackgrounds() {
+        var mastheads = document.querySelectorAll('.masthead');
+        mastheads.forEach(function(masthead) {
+          // Get computed style to extract the background image URL
+          var computedStyle = window.getComputedStyle(masthead);
+          var bgImage = computedStyle.backgroundImage;
+          
+          // Extract URL from background-image (format: url("...") or url(...))
+          var urlMatch = bgImage.match(/url\(['"]?([^'"]+)['"]?\)/);
+          if (urlMatch && urlMatch[1]) {
+            var imageUrl = urlMatch[1];
+            
+            // Completely rebuild the background style without fixed attachment
+            masthead.style.background = 'url(' + imageUrl + ') center center / cover no-repeat';
+            masthead.style.backgroundAttachment = 'scroll';
+            masthead.style.backgroundSize = 'cover';
+            masthead.style.backgroundPosition = 'center center';
+            masthead.style.backgroundRepeat = 'no-repeat';
+          }
+        });
+      }
+      
+      // Run immediately and after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixMastheadBackgrounds);
+      } else {
+        fixMastheadBackgrounds();
+      }
+      
+      // Also run after a short delay to catch any dynamic changes
+      setTimeout(fixMastheadBackgrounds, 100);
     }
   })();
 </script>

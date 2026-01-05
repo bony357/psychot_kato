@@ -1,5 +1,13 @@
 .masthead {
   background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Disable fixed attachment on iOS Safari to prevent oversized images */
+.ios-device .masthead {
+  background-attachment: scroll !important;
 }
 
 @media (max-width: 500px) {

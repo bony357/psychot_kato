@@ -22,54 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-<script>
-  // Detect iOS/Safari and disable parallax to prevent oversized images
-  (function() {
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    
-    if (isIOS || isSafari) {
-      document.documentElement.classList.add('ios-device');
-      if (isSafari) {
-        document.documentElement.classList.add('safari-device');
-      }
-      
-      // Function to fix masthead backgrounds on iOS/Safari
-      function fixMastheadBackgrounds() {
-        var mastheads = document.querySelectorAll('.masthead');
-        mastheads.forEach(function(masthead) {
-          // Get computed style to extract the background image URL
-          var computedStyle = window.getComputedStyle(masthead);
-          var bgImage = computedStyle.backgroundImage;
-          
-          // Extract URL from background-image (format: url("...") or url(...))
-          var urlMatch = bgImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-          if (urlMatch && urlMatch[1]) {
-            var imageUrl = urlMatch[1];
-            
-            // Completely rebuild the background style without fixed attachment
-            masthead.style.background = 'url(' + imageUrl + ') center center / cover no-repeat';
-            masthead.style.backgroundAttachment = 'scroll';
-            masthead.style.backgroundSize = 'cover';
-            masthead.style.backgroundPosition = 'center center';
-            masthead.style.backgroundRepeat = 'no-repeat';
-          }
-        });
-      }
-      
-      // Run immediately and after DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fixMastheadBackgrounds);
-      } else {
-        fixMastheadBackgrounds();
-      }
-      
-      // Also run after a short delay to catch any dynamic changes
-      setTimeout(fixMastheadBackgrounds, 100);
-    }
-  })();
-</script>
 </head>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

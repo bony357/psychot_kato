@@ -1,14 +1,5 @@
 .masthead {
-  background-attachment: fixed !important;
-}
-
-/* Disable parallax on iOS/Safari to prevent oversized images */
-.ios-device .masthead,
-.safari-device .masthead {
   background-attachment: scroll !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
 }
 
 @media (max-width: 500px) {

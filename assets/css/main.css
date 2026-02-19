@@ -28,3 +28,7 @@ h2 {
   color: rgb(245,205,126);
 }
 
+.services-list {
+  display: inline-block;
+  text-align: left;
+}

@@ -2,16 +2,72 @@
 <html>
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHL0GYQ62L"></script>
+    <!-- Google Consent Mode v2 - defaults (must be before gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHL0GYQ62L"></script>
+    <script>
       gtag('js', new Date());
-
       gtag('config', 'G-CHL0GYQ62L');
       gtag('config', 'AW-16494645470');
     </script>
+    <style>
+      #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: rgb(30, 30, 30);
+        border-top: 1px solid rgb(245, 205, 126);
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-family: Lora, serif;
+        color: #fff;
+        font-size: 14px;
+      }
+      #cookie-banner p {
+        margin: 0;
+        flex: 1;
+        min-width: 200px;
+      }
+      #cookie-banner .cookie-buttons {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      #cookie-banner button {
+        padding: 8px 20px;
+        border: none;
+        cursor: pointer;
+        font-family: Lora, serif;
+        font-size: 14px;
+        border-radius: 3px;
+      }
+      #cookie-accept {
+        background: rgb(245, 205, 126);
+        color: rgb(25, 25, 25);
+        font-weight: bold;
+      }
+      #cookie-reject {
+        background: transparent;
+        color: rgb(245, 205, 126);
+        border: 1px solid rgb(245, 205, 126) !important;
+      }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Gabinet Psychoterapii SENS</title>
@@ -237,6 +293,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/grayscale.js"></script>
 	<script src="assets/js/script.min.js"></script>
+
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" style="display:none;">
+      <p>Ta strona używa plików cookie oraz podobnych technologii w celach analitycznych i reklamowych. Czy wyrażasz zgodę na ich wykorzystanie?</p>
+      <div class="cookie-buttons">
+        <button id="cookie-reject">Odrzuć</button>
+        <button id="cookie-accept">Akceptuj</button>
+      </div>
+    </div>
+    <script>
+      (function() {
+        var consent = localStorage.getItem('cookie_consent');
+        if (consent === 'granted') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+          });
+        } else if (!consent) {
+          document.getElementById('cookie-banner').style.display = 'flex';
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'granted');
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+          });
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'denied');
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+      })();
+    </script>
 </body>
 
 </html>

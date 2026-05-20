@@ -1,338 +1,693 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pl">
 <head>
-    <!-- Google Consent Mode v2 - defaults (must be before gtag.js) -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
-      });
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHL0GYQ62L"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-CHL0GYQ62L');
-      gtag('config', 'AW-16494645470');
-    </script>
-    <style>
-      #cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background: rgb(30, 30, 30);
-        border-top: 1px solid rgb(245, 205, 126);
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-        font-family: Lora, serif;
-        color: #fff;
-        font-size: 14px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychoterapia Katowice | Gabinet SENS – Paulina Psonak</title>
+  <meta name="description" content="Psychoterapia indywidualna i konsultacje psychologiczne w Katowicach. Diagnoza ADHD, ASD i osobowości dorosłych. Gabinet SENS – mgr Paulina Psonak, psychoterapeutka psychodynamiczna.">
+  <link rel="canonical" href="https://www.psychoterapia-kato.pl/index.html">
+  <meta property="og:title" content="Gabinet Psychoterapii SENS – Katowice">
+  <meta property="og:description" content="Psychoterapia indywidualna, konsultacje psychologiczne, diagnoza ADHD i ASD dorosłych. Katowice centrum.">
+  <meta property="og:image" content="https://www.psychoterapia-kato.pl/assets/img/zdj1.jpeg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gabinet Psychoterapii i Pomocy Psychologicznej SENS",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Mielęckiego 10/612",
+      "addressLocality": "Katowice",
+      "postalCode": "40-013",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48722089888",
+    "email": "paulina.psonak@wp.pl",
+    "url": "https://www.psychoterapia-kato.pl"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
       }
-      #cookie-banner p {
-        margin: 0;
-        flex: 1;
-        min-width: 200px;
+    }
+  </script>
+
+  <!-- Google Consent Mode v2 defaults – must be before gtag.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHL0GYQ62L"></script>
+  <script>
+    gtag('config', 'G-CHL0GYQ62L');
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Fade-in for hero elements */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in   { opacity: 0; animation: fadeInUp 0.9s ease forwards; }
+    .delay-1   { animation-delay: 0.15s; }
+    .delay-2   { animation-delay: 0.35s; }
+    .delay-3   { animation-delay: 0.55s; }
+
+    /* Intersection-observer reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Hero gradient overlay */
+    .hero-overlay {
+      background: linear-gradient(
+        to right,
+        rgba(245, 243, 239, 0.93) 0%,
+        rgba(245, 243, 239, 0.92) 38%,
+        rgba(245, 243, 239, 0.35) 65%,
+        rgba(245, 243, 239, 0)   100%
+      );
+    }
+
+    /* On mobile, full overlay for legibility */
+    @media (max-width: 640px) {
+      .hero-overlay {
+        background: rgba(245, 243, 239, 0.82);
       }
-      #cookie-banner .cookie-buttons {
-        display: flex;
-        gap: 10px;
-        flex-shrink: 0;
-      }
-      #cookie-banner button {
-        padding: 8px 20px;
-        border: none;
-        cursor: pointer;
-        font-family: Lora, serif;
-        font-size: 14px;
-        border-radius: 3px;
-      }
-      #cookie-accept {
-        background: rgb(245, 205, 126);
-        color: rgb(25, 25, 25);
-        font-weight: bold;
-      }
-      #cookie-reject {
-        background: transparent;
-        color: rgb(245, 205, 126);
-        border: 1px solid rgb(245, 205, 126) !important;
-      }
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Gabinet Psychoterapii SENS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="Psychoterapia indywidualna Katowice centrum. Pomoc w lęku, depresji i trudnościach w relacjach. Konsultacje psychologiczne i diagnoza.">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_sm.png?h=558cd8fe0d1973f0dc9ec7048b370f7d">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_lg.png?h=3623120f6c9d7e7d66a4e206172a18aa">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Info--Google-Map.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    }
+
+    .nav-shadow { box-shadow: 0 1px 16px rgba(120, 100, 80, 0.09); }
+
+    /* Section alternating backgrounds */
+    .sec-a { background-color: #faf9f7; }   /* warm white */
+    .sec-b { background-color: #e1d6d154; }  /* warm sandy linen */
+
+    #main-nav {
+      transition: transform 0.35s ease, box-shadow 0.3s ease;
+    }
+    #main-nav.nav--hidden {
+      transform: translateY(-100%);
+    }
+  </style>
 </head>
+<body class="font-sans bg-stone-50 text-stone-800 antialiased">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-203036633-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-203036633-1');
-</script>
-
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77" style="background: rgb(25,25,25);">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand" href="#" style="color: rgb(0,0,0);"><img id="logo" src="assets/img/logo_wh_sm.png" style="width: 136px;max-width: 250vw;"></a>
-            <p class="d-xl-flex justify-content-xl-center align-items-xl-center" id="logotext" style="color: rgb(62,41,31);font-family: Lora, serif;font-size: 15px;margin-bottom: 0px;font-weight: bold;text-transform: none;">Gabinet Psychoterapii <br>i Pomocy Psychologicznej</p><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link" style="border-left-color: rgba(0,0,0,0.55);"><a class="nav-link active nav-text" href="#about" style="color: rgb(62,41,31);border-left: 2px solid rgb(62,41,31);font-family: Lora, serif;">O mnie</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link active" href="#services" style="color: rgb(62,41,31);border-left-width: 2px;border-left-style: solid;text-transform: none;font-family: Lora, serif;">Oferta</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link active nav-text" href="#contact" style="color: rgb(62,41,31);border-left-width: 2px;border-left-style: solid;font-family: Lora, serif;">Kontakt</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead" style="filter: blur(0px) grayscale(27%);opacity: 1;background: url('assets/img/162545348_1349652492084809_3484266491070405528_n.jpg') top / cover no-repeat;">
-        <div class="intro-body">
-            <div class="container" style="padding-top: 130px;">
-                <div class="row" style="margin-right: 0;margin-left: 0;">
-                    <div class="col-lg-8 mx-auto" style="opacity: 1;">
-                        <h1 class="text-center brand-heading" data-aos="fade-down" data-aos-duration="800" style="font-family: 'Josefin Sans', sans-serif;font-size: 3rem;text-shadow: 1px 1px 9px rgb(0,0,0);margin-bottom: 8px;">Gabinet psychoterapii<br></h1>
-                        <h1 class="text-center brand-heading" data-aos="fade-down" data-aos-duration="800" id="sens" style="font-family: 'Josefin Sans', sans-serif;font-size: 4rem;text-shadow: 6px -4px 0px var(--bs-dark);">SENS</h1>
-                        <p data-aos="fade-down" data-aos-duration="800" data-aos-delay="800" class="intro-text" style="text-shadow: 1px 1px 7px rgb(0,0,0);color: rgb(255, 255, 255);transform: translate(0px) skew(-22deg);">Psychoterapia indywidualna - Katowice<br>Pomoc w trudnościach emocjonalnych, napięciu i problemach w relacjach.</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="text-center content-section" id="about" style="color: rgb(255,255,255);padding-top: 150px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading" style="color: rgb(245,205,126);">mgr paulina psonak</h2>
-                    <hr class="my-4">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row d-md-flex flex-column align-items-center flex-lg-row">
-                <div class="col-7 col-lg-4"><img data-aos="fade-right" data-aos-duration="1000" src="assets/img/187540712_931035317696470_3157085008668904636_n.jpg" style="width: 100%;padding: 22px;margin: 0px;border-radius: 0px;border-style: none;border-color: rgb(255,255,255);background: #ffffff;"></div>
-                <div class="col-md-8" data-aos="fade-left" data-aos-duration="1000">
-                    <p style="font-family: Lora, serif;padding-right: 40px;padding-left: 40px;"><br><strong>Jestem psycholożką i psychoterapeutką w trakcie certyfikacji Polskiego Towarzystwa Psychoterapii Psychodynamicznej. Prowadzę prywatny gabinet w Katowicach, gdzie oferuję psychoterapię indywidualną osób dorosłych, konsultacje psychologiczne oraz specjalistyczną diagnozę psychologiczną.</strong><br></p>
-                    <p>Ukończyłam 5-letnie studia magisterskie na kierunku psychologia na Uniwersytecie Śląskim w Katowicach oraz 4-letnie specjalistyczne szkolenie z zakresu psychoterapii w Krakowskim Centrum Psychodynamicznym (rekomendowanym przez Polskie Towarzystwo Psychologiczne).<br></p>
-                    <p>Jestem certyfikowaną terapeutką TFP (Terapia Skoncentrowana na Przeniesieniu).<br></p>
-                    <p>Posiadam kilkuletnie doświadczenie w pracy klinicznej w szpitalu specjalistycznym, gdzie udzielałam pomocy psychologicznej oraz prowadziłam diagnozę psychologiczną i neuropsychologiczną.<br></p>
-                    <p>W gabinecie w Katowicach prowadzę:</p>
-                    <ul class="services-list mb-4">
-                        <li><p class="mb-0">psychoterapię indywidualną osób dorosłych</p></li>
-                        <li><p class="mb-0">konsultacje psychologiczne</p></li>
-                        <li><p class="mb-0">diagnozę ADHD osób dorosłych</p></li>
-                        <li><p class="mb-0">diagnozę osobowości</p></li>
-                        <li><p class="mb-0">diagnozę w kierunku spektrum autyzmu osób dorosłych</p></li>
-                        <li><p class="mb-0">diagnozę neuropsychologiczną</p></li>
-                    </ul>
-                    <p>Pracuję z osobami doświadczającymi trudności emocjonalnych, przewlekłego stresu, problemów w relacjach, objawów depresji, lęku oraz kryzysów życiowych.<br></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section style="padding-bottom: 200px;">
-        <div class="container">
-            <div class="row" style="padding-bottom: 100px;"><div class="col-lg-12 text-center">
-    <div class="accordion" role="tablist" id="accordion-1">
-        <div class="accordion-item" style="border: none;">
-                <div role="tab">
-                    <button style="width: 100%;">
-                        <h2 class="section-heading" style="color: rgb(245, 205, 126);" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Dla kogo?</h2>
-                        <hr class="my-4"/>
-                    </button>
-                </div>
-            <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-1">
-                <div class="accordion-body">
-                    <p>Zgłaszają się do mnie osoby, które:</p>
-					<ul class="services-list mb-4">
-					 <li><p class="mb-0">Czują stałe napięcie lub niepokoj,</p></li>
-                     <li><p class="mb-0">Mają trudności w relacjach i nie rozumieją, skąd się one biorą,</p></li>
-					 <li><p class="mb-0">Zauważają powtarzające się schematy w swoim życiu,</p></li>
-					 <li><p class="mb-0">Odczuwają obniżony nastrój lub brak energii,</p></li>
-					 <li><p class="mb-0">Czują się przeciążone emocjonalnie,</p></li>
-					 <li><p class="mb-0">Potrzebują przestrzeni do spokojnego zatrzymania się i refleksji.</p></li>
-				    </ul>
-					<p>Jeżeli rozpoznaje się Pan/Pani w opisanych trudnościach, może to być moment, aby rozważyć rozpoczęcie psychoterapii.</p>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item" style="border: none;">
-            <div role="tab">
-                <button style="width: 100%;">
-                    <h2 class="section-heading" style="color: rgb(245, 205, 126);" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="true" aria-controls="accordion-1 .item-2">Co daje terapia?</h2>
-                    <hr class="my-4"/>
-                </button>
-            </div>
-            <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
-                <div class="accordion-body">
-                    <p>Psychoterapia jest procesem, który może umożliwić:</p>
-					<ul class="services-list mb-4">
-                     <li><p class="mb-0">Lepsze rozumienie własnych emocji i relacji,</p></li>
-					 <li><p class="mb-0">Zauważanie mechanizmów wpływających na codzienne funkcjonowanie,</p></li>
-					 <li><p class="mb-0">Budowanie bardziej satysfakcjonujących relacji,</p></li>
-					 <li><p class="mb-0">Odzyskiwanie poczucia wpływu i większej stabilności wewnętrznej.</p></li>
-					</ul>
-                </div>
-            </div>
-        </div>
-        <div id="services" class="accordion-item" style="border: none;">
-            <div role="tab">
-                <button style="width: 100%;">
-                    <h2 class="section-heading" style="color: rgb(245, 205, 126);" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="true" aria-controls="accordion-1 .item-3">Jak pracuję?</h2>
-                    <hr class="my-4"/>
-                </button>
-            </div>
-            <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-1">
-                <div class="accordion-body">
-                    <p>Pracuję w oparciu o relację terapeutyczną, uważność oraz indywidualne podejście do każdej osoby.</p>
-                    <p>Istotnym elementem pracy są jasne zasady oraz stałość spotkań, które tworzą uporządkowaną i bezpieczną przestrzeń do procesu terapeutycznego.</p>
-                    <p>Ze swojej strony zapewniam wiedzę, którą ciągle poszerzam zarówno poprzez superwizję, jak i udział w dodatkowych kursach i szkoleniach.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 col-xxl-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fas fa-paper-plane fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="500"></i>
-                        <h3 class="mb-3" style="font-size: 27px;">Konsultacja psychologiczna</h3>
-                        <p class="text-muted mb-0">170 zł<br>50 min</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xxl-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fa fa-comments fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500"></i>
-                        <h3 class="mb-3" style="font-size: 27px;">Psychoterapia indywidualna</h3>
-                        <p class="text-muted mb-0">170 zł<br>50 min</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xxl-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="far fa-list-alt fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="1000"></i>
-                        <h3 class="mb-3" style="font-size: 27px;">Diagnoza <br>ADHD</h3>
-                        <p class="text-muted mb-0">1200 zł<br>(wraz z MOXO)</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fas fa-brain fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="500" data-aos-delay="1500"></i>
-                        <h3 class="mb-3" style="font-size: 27px;">Diagnoza Neuropsychologiczna</h3>
-                        <p class="text-muted mb-0">200 zł<br>60 min</p>
-						<p class="text-muted mb-0">(min. 2 spotkania)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center download-section content-section masthead" id="calendar" style="background: url('assets/img/pexels-ylanite-koppens-796602.jpg') bottom / cover no-repeat;padding-top: 100px;padding-bottom: 50px;max-height: 350px;">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1 style="font-size: 32px; text-shadow: 0px 0px 10px rgb(0,0,0);">Aby umówić pierwsze spotkanie, proszę o kontakt SMS lub e-mail</h1>
-            </div>
-        </div>
-    </section>
-    <section class="text-center content-section" id="contact" style="padding-top: 100px;padding-bottom: 20px;">
-        <!-- Start: Minimalistic Contact Form -->
-        <div style="padding-top: 60px;padding-bottom: 30px;">
-            <!-- Start: Content -->
-            <div class="container" style="padding-bottom: 10px;">
-                <div class="text-center">
-                    <hr style="border-color: rgb(0,0,0);width: 121px;">
-                </div>
-                <div class="row d-md-flex justify-content-md-center" style="margin-top: 44px;">
-                    <!-- Start: Our Info DIV -->
-                    <div class="col-md-6 col-lg-5 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-bottom: 40px;">
-                        <!-- Start: Our Info -->
-                        <h2 class="h4" style="margin-bottom: 0px;"><i class="far fa-envelope"></i>&nbsp;Kontakt</h2><!-- End: Our Info -->
-                        <!-- Start: Name -->
-                        <div style="padding-top: 10px;"><span><strong>E-mail</strong></span></div><!-- End: Name -->
-                        <div><span>paulina.psonak@wp.pl</span></div><!-- Start: Name -->
-                        <div style="padding-top: 10px;"><span><strong>Telefon</strong><span><br>722 089 888<br></span></span></div>
-                        <h2 class="h4" style="margin-top: 35px;margin-bottom: 0px;padding-bottom: 10px;"><i class="fas fa-map-marked-alt"></i>&nbsp;Adres</h2><span style="padding-top: 10px;"><strong>Gabinet Psychoterapii i </strong><br><strong>Pomocy Psychologicznej SENS</strong><br></span><span style="padding-top: 10px;"><strong>Katowice, Polska</strong><br></span><span>40-013<br>Mielęckiego 10/pok. 612<br></span>
-                    </div>
-                    <div class="col-md-12 col-lg-7">
-                        <div class="map-clean"><iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDJ7C4KXCrIuPEfUkx8D8ktgS8dTodiWSM&amp;q=place_id:ChIJ_7lIm7nPFkcR6fDbmYJQCfo&amp;zoom=17" width="100%" height="450" style="margin: 5px;"></iframe></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container text-center">
-            <p>Copyright © Bartosz Boniecki Design 2021</p>
-        </div>
-    </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/grayscale.js"></script>
-	<script src="assets/js/script.min.js"></script>
-
-    <!-- Cookie consent banner -->
-    <div id="cookie-banner" style="display:none;">
-      <p>Ta strona używa plików cookie oraz podobnych technologii w celach analitycznych i reklamowych. Czy wyrażasz zgodę na ich wykorzystanie?</p>
-      <div class="cookie-buttons">
-        <button id="cookie-reject">Odrzuć</button>
-        <button id="cookie-accept">Akceptuj</button>
+  <!-- ═══════════════════════════════════════
+       CERTIFICATE MODAL
+  ═══════════════════════════════════════ -->
+  <div id="cert-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Certyfikat TFP">
+    <div id="cert-backdrop" class="absolute inset-0 bg-stone-900/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-2xl w-full">
+      <button onclick="closeCert()" class="absolute -top-10 right-0 text-stone-200 hover:text-white text-sm tracking-wide flex items-center gap-2 transition duration-200" aria-label="Zamknij">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        Zamknij
+      </button>
+      <div class="bg-white rounded-sm shadow-2xl p-4">
+        <img src="assets/img/certificate.png" alt="Certyfikat TFP – Paulina Psonak, International Society of Transference-Focused Psychotherapy" class="w-full rounded-sm">
       </div>
     </div>
-    <script>
-      (function() {
-        var consent = localStorage.getItem('cookie_consent');
-        if (consent === 'granted') {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted'
-          });
-        } else if (!consent) {
-          document.getElementById('cookie-banner').style.display = 'flex';
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       COOKIE CONSENT BANNER
+  ═══════════════════════════════════════ -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-stone-800 text-stone-100 hidden">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center gap-4 sm:justify-between">
+      <p class="text-sm leading-relaxed text-stone-300">
+        Ta strona używa plików cookie Google Analytics do anonimowej analizy ruchu.
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline hover:text-stone-100">Polityka prywatności Google</a>.
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <button onclick="acceptCookies()" class="bg-amber-600 hover:bg-amber-500 text-white text-sm px-5 py-2 rounded-sm transition">Akceptuję</button>
+        <button onclick="rejectCookies()" class="border border-stone-500 hover:border-stone-300 text-stone-300 hover:text-stone-100 text-sm px-5 py-2 rounded-sm transition">Odrzucam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 bg-stone-50/96 backdrop-blur-sm border-b border-stone-100 transition-shadow duration-300">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+
+        <!-- Wordmark -->
+        <a href="#" class="shrink-0 text-2xl lg:text-3xl text-stone-800 tracking-widest hover:text-amber-700 transition duration-200" style="font-family: 'Quicksand', sans-serif; font-weight: 600; letter-spacing: 0.2em;" aria-label="Strona główna">
+          SENS
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center gap-7 lg:gap-9">
+          <a href="#o-mnie"      class="text-stone-600 hover:text-amber-700 text-sm tracking-wide transition duration-200">O mnie</a>
+          <a href="#dla-kogo"    class="text-stone-600 hover:text-amber-700 text-sm tracking-wide transition duration-200">Dla kogo?</a>
+          <a href="#oferta"      class="text-stone-600 hover:text-amber-700 text-sm tracking-wide transition duration-200">Oferta</a>
+          <a href="#jak-pracuje" class="text-stone-600 hover:text-amber-700 text-sm tracking-wide transition duration-200">Jak pracuję?</a>
+          <a href="#kontakt"     class="bg-stone-800 hover:bg-stone-700 text-stone-50 text-sm px-5 py-2.5 rounded-sm tracking-wide transition duration-200 ml-2">Umów wizytę</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-toggle" class="md:hidden p-2 -mr-1 text-stone-700" aria-label="Otwórz menu" aria-expanded="false">
+          <svg id="icon-open"  class="w-6 h-6"        fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-t border-stone-100">
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <a href="#o-mnie"      class="mobile-link text-stone-700 hover:text-amber-700 transition">O mnie</a>
+        <a href="#dla-kogo"    class="mobile-link text-stone-700 hover:text-amber-700 transition">Dla kogo?</a>
+        <a href="#oferta"      class="mobile-link text-stone-700 hover:text-amber-700 transition">Oferta</a>
+        <a href="#jak-pracuje" class="mobile-link text-stone-700 hover:text-amber-700 transition">Jak pracuję?</a>
+        <a href="#kontakt"     class="mobile-link mt-1 bg-stone-800 text-stone-50 text-center py-3 rounded-sm tracking-wide">Umów wizytę</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background photo -->
+    <div class="absolute inset-0">
+      <img src="assets/img/gabinet1.jpeg" alt="Gabinet psychoterapii SENS w Katowicach – fotele, rośliny, naturalne światło" class="w-full h-full object-cover object-center">
+    </div>
+    <!-- Warm gradient overlay -->
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-8 pt-28 pb-20">
+      <div class="max-w-lg lg:max-w-xl">
+        <p class="fade-in text-amber-700 text-xs tracking-widest uppercase mb-5 font-sans">
+          Gabinet Psychoterapii SENS · Katowice centrum
+        </p>
+        <h1 class="fade-in delay-1 font-serif text-4xl sm:text-5xl lg:text-6xl text-stone-800 leading-tight mb-6">
+          Psychoterapia i diagnoza psychologiczna w Katowicach
+        </h1>
+        <p class="fade-in delay-2 text-stone-600 text-lg leading-relaxed mb-10 max-w-sm">
+          Gabinet psychoterapii dla osób dorosłych. Psychoterapia indywidualna, konsultacje psychologiczne oraz diagnoza psychologiczna.
+        </p>
+        <div class="fade-in delay-3">
+          <a href="#kontakt" class="inline-block bg-stone-800 hover:bg-stone-700 text-stone-50 px-8 py-3.5 text-sm tracking-wider transition duration-200 rounded-sm">
+            Umów wizytę
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-stone-500 opacity-60 animate-bounce">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       O MNIE
+  ═══════════════════════════════════════ -->
+  <section id="o-mnie" class="py-20 lg:py-32 sec-a border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <!-- Photo column -->
+        <div class="reveal order-2 lg:order-1">
+          <div class="aspect-[3/4] overflow-hidden rounded-sm">
+            <img src="assets/img/zdj1.jpeg" alt="mgr Paulina Psonak – psycholożka i psychoterapeutka w Katowicach" class="w-full h-full object-cover object-top">
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="reveal order-1 lg:order-2 pt-2 lg:pt-6">
+          <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">O mnie</p>
+          <h2 class="font-serif text-3xl lg:text-4xl text-stone-800 leading-snug mb-2">mgr Paulina Psonak</h2>
+          <p class="font-serif italic text-stone-500 text-base mb-8 leading-snug">
+            psycholożka i psychoterapeutka w trakcie certyfikacji<br>
+            Polskiego Towarzystwa Psychoterapii Psychodynamicznej
+          </p>
+
+          <div class="space-y-5 text-stone-600 leading-relaxed">
+            <p>Nazywam się Paulina Psonak. Jestem psycholożką i psychoterapeutką pracującą z osobami dorosłymi.</p>
+            <p>W swojej pracy staram się tworzyć przestrzeń opartą na uważności, stabilności i jasnych zasadach współpracy. Uważam, że psychoterapia wymaga czasu, zaangażowania i możliwości swobodnego myślenia o tym, co trudne — bez oceniania i bez pośpiechu.</p>
+            <p>Pracuję w nurcie psychodynamicznym. Interesuje mnie nie tylko sam objaw czy aktualny kryzys, ale również to, w jaki sposób dana osoba przeżywa relacje, emocje i własne doświadczenia.</p>
+            <p>Prowadzę psychoterapię indywidualną oraz diagnozę psychologiczną. Swoją pracę regularnie poddaję superwizji i stale rozwijam kompetencje zawodowe.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WYKSZTAŁCENIE
+  ═══════════════════════════════════════ -->
+  <section id="wyksztalcenie" class="py-20 lg:py-28 sec-b border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <!-- Credentials -->
+        <div class="reveal">
+          <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Wykształcenie i doświadczenie</p>
+          <h2 class="font-serif text-3xl lg:text-4xl text-stone-800 leading-snug mb-8">Kwalifikacje</h2>
+          <ul class="space-y-5 text-stone-600 text-sm leading-relaxed">
+            <li class="flex gap-3.5 items-start">
+              <span class="text-amber-600 mt-0.5 shrink-0 font-serif">—</span>
+              <span>5-letnie studia magisterskie, psychologia, Uniwersytet Śląski w Katowicach</span>
+            </li>
+            <li class="flex gap-3.5 items-start">
+              <span class="text-amber-600 mt-0.5 shrink-0 font-serif">—</span>
+              <span>4-letnie szkolenie z psychoterapii, Krakowskie Centrum Psychodynamiczne (rekomendowane przez PTP)</span>
+            </li>
+            <li class="flex gap-3.5 items-start">
+              <span class="text-amber-600 mt-0.5 shrink-0 font-serif">—</span>
+              <span>Certyfikowana terapeutka TFP (Terapia Skoncentrowana na Przeniesieniu)</span>
+            </li>
+            <li class="flex gap-3.5 items-start">
+              <span class="text-amber-600 mt-0.5 shrink-0 font-serif">—</span>
+              <span>Kilkuletnie doświadczenie kliniczne w szpitalu specjalistycznym (pomoc psychologiczna, diagnoza psychologiczna i neuropsychologiczna)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certificate -->
+        <div class="reveal">
+          <p class="text-xs text-stone-400 uppercase tracking-widest mb-4 font-sans">Certyfikat</p>
+          <button onclick="openCert()" class="bg-white border border-stone-200 rounded-sm shadow-sm p-3 cursor-zoom-in hover:border-amber-300 transition duration-200 text-left w-full max-w-sm">
+            <img src="assets/img/certificate.png" alt="Certyfikat TFP – Paulina Psonak, International Society of Transference-Focused Psychotherapy" class="w-full rounded-sm">
+            <p class="text-xs text-stone-400 mt-2 text-center tracking-wide">kliknij, aby powiększyć</p>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       DLA KOGO
+  ═══════════════════════════════════════ -->
+  <section id="dla-kogo" class="py-20 lg:py-28 sec-a border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+        <!-- For whom -->
+        <div class="reveal">
+          <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Dla kogo?</p>
+          <h2 class="font-serif text-3xl lg:text-4xl text-stone-800 leading-snug mb-8">
+            Psychoterapia może<br>pomóc, gdy…
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Odczuwasz stałe napięcie lub niepokój</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Masz trudności w relacjach – nie wiesz skąd się biorą</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Zauważasz powtarzające się schematy w życiu</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Odczuwasz obniżony nastrój lub brak energii</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Doświadczasz przeciążenia emocjonalnego</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Potrzebujesz przestrzeni do refleksji i zatrzymania się</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- What therapy gives -->
+        <div class="reveal">
+          <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Co daje terapia?</p>
+          <h2 class="font-serif text-3xl lg:text-4xl text-stone-800 leading-snug mb-8">
+            Psychoterapia<br>psychodynamiczna…
+          </h2>
+          <ul class="space-y-4 mb-10">
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Pozwala lepiej rozumieć własne emocje i relacje</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Pomaga zauważać mechanizmy wpływające na codzienne funkcjonowanie</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Wspiera budowanie bardziej satysfakcjonujących relacji</span>
+            </li>
+            <li class="flex gap-4 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2.5 shrink-0"></span>
+              <span class="text-stone-700 leading-relaxed">Pomaga odzyskać poczucie wpływu i wewnętrznej stabilności</span>
+            </li>
+          </ul>
+          <a href="#kontakt" class="inline-block border border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-stone-50 px-7 py-3 text-sm tracking-wide transition duration-200 rounded-sm">
+            Umów konsultację
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OFERTA
+  ═══════════════════════════════════════ -->
+  <section id="oferta" class="py-20 lg:py-32 sec-b border-t border-stone-200">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+      <div class="reveal text-center mb-14">
+        <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Oferta</p>
+        <h2 class="font-serif text-3xl lg:text-4xl text-stone-800">Usługi i cennik</h2>
+      </div>
+
+      <div class="reveal grid sm:grid-cols-3 gap-4 lg:gap-5 max-w-3xl mx-auto">
+
+        <div class="bg-white border border-stone-200 rounded-sm p-6 hover:border-amber-200 transition duration-300">
+          <h3 class="font-serif text-lg text-stone-800 mb-2">Konsultacja psychologiczna</h3>
+          <p class="text-stone-400 text-xs mb-5 uppercase tracking-wide">50 minut</p>
+          <p class="font-serif text-2xl text-amber-700">170 zł</p>
+        </div>
+
+        <div class="bg-white border border-stone-200 rounded-sm p-6 hover:border-amber-200 transition duration-300">
+          <h3 class="font-serif text-lg text-stone-800 mb-2">Psychoterapia indywidualna</h3>
+          <p class="text-stone-400 text-xs mb-5 uppercase tracking-wide">50 minut</p>
+          <p class="font-serif text-2xl text-amber-700">170 zł</p>
+        </div>
+
+        <div class="bg-white border border-stone-200 rounded-sm p-6 hover:border-amber-200 transition duration-300">
+          <h3 class="font-serif text-lg text-stone-800 mb-2">Diagnoza ADHD</h3>
+          <p class="text-stone-400 text-xs mb-5 uppercase tracking-wide">z testem MOXO · pakiet</p>
+          <p class="font-serif text-2xl text-amber-700">1 200 zł</p>
+        </div>
+
+      </div>
+
+      <div class="reveal mt-8 text-center">
+        <p class="text-stone-400 text-sm leading-relaxed">
+          Pierwsze spotkanie umawiamy wyłącznie przez SMS lub e-mail.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       JAK PRACUJĘ
+  ═══════════════════════════════════════ -->
+  <section id="jak-pracuje" class="py-20 lg:py-32 sec-a border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Text -->
+        <div class="reveal">
+          <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Jak wygląda terapia?</p>
+          <h2 class="font-serif text-3xl lg:text-4xl text-stone-800 leading-snug mb-2">Podejście terapeutyczne</h2>
+          <p class="font-serif italic text-stone-500 text-base mb-8">Pracuję w nurcie psychodynamicznym.</p>
+
+          <div class="space-y-5 text-stone-700 leading-relaxed text-base lg:text-lg">
+            <p>Psychoterapia opiera się na regularnych spotkaniach i stałych zasadach współpracy. W pracy terapeutycznej istotne jest zrozumienie mechanizmów wpływających na sposób przeżywania emocji, budowania relacji oraz reagowania na różne sytuacje.</p>
+            <p>Terapia nie polega na udzielaniu prostych porad ani gotowych rozwiązań. Jest procesem wymagającym czasu, regularności i zaangażowania.</p>
+            <p>Każda osoba traktowana jest indywidualnie, a sposób pracy dostosowywany jest do zgłaszanych trudności oraz potrzeb.</p>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-stone-200 flex flex-wrap gap-2.5">
+            <span class="bg-white border border-stone-200 text-stone-600 text-xs px-3.5 py-2 rounded-sm tracking-wide">Psychoterapia psychodynamiczna</span>
+            <span class="bg-white border border-stone-200 text-stone-600 text-xs px-3.5 py-2 rounded-sm tracking-wide">TFP – Terapia Skoncentrowana na Przeniesieniu</span>
+            <span class="bg-white border border-stone-200 text-stone-600 text-xs px-3.5 py-2 rounded-sm tracking-wide">Regularna superwizja</span>
+            <span class="bg-white border border-stone-200 text-stone-600 text-xs px-3.5 py-2 rounded-sm tracking-wide">Psycholog Katowice</span>
+          </div>
+        </div>
+
+        <!-- Photo -->
+        <div class="reveal">
+          <div class="aspect-[3/4] overflow-hidden rounded-sm">
+            <img src="assets/img/zdj2.jpeg" alt="Paulina Psonak – psychoterapeutka w gabinecie w Katowicach" class="w-full h-full object-cover object-top">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       GABINET
+  ═══════════════════════════════════════ -->
+  <section id="gabinet" class="py-20 lg:py-28 sec-b border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+      <div class="reveal text-center mb-12">
+        <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Przestrzeń</p>
+        <h2 class="font-serif text-3xl lg:text-4xl text-stone-800">Gabinet</h2>
+        <p class="text-stone-400 mt-2 text-sm">ul. Mielęckiego 10 / pok. 612, Katowice</p>
+      </div>
+
+      <div class="reveal grid grid-cols-2 gap-3 lg:gap-4">
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="assets/img/gabinet1.jpeg" alt="Gabinet SENS – fotele i naturalne światło" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="assets/img/gabinet2.jpeg" alt="Gabinet SENS – wnętrze gabinetu psychoterapii" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="assets/img/gabinet3.jpeg" alt="Gabinet SENS – przestrzeń terapeutyczna" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="assets/img/gabinet4.jpeg" alt="Gabinet SENS – detal aranżacji" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       KONTAKT
+  ═══════════════════════════════════════ -->
+  <section id="kontakt" class="py-20 lg:py-32 sec-a border-t border-stone-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+      <div class="reveal text-center mb-14">
+        <p class="text-amber-700 text-xs tracking-widest uppercase mb-3 font-sans">Kontakt</p>
+        <h2 class="font-serif text-3xl lg:text-4xl text-stone-800">Umów wizytę</h2>
+        <p class="text-stone-500 mt-3 text-sm leading-relaxed max-w-sm mx-auto">
+          Pierwsze spotkanie umawiamy przez SMS lub e-mail. Odpowiadam na wiadomości w ciągu 24–48&nbsp;godzin.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Contact details -->
+        <div class="reveal">
+          <address class="not-italic space-y-6 mb-10">
+            <div>
+              <p class="text-xs text-stone-400 uppercase tracking-widest mb-1.5 font-sans">Adres</p>
+              <p class="text-stone-700">ul. Mielęckiego 10 / pok. 612</p>
+              <p class="text-stone-700">40-013 Katowice</p>
+            </div>
+            <div>
+              <p class="text-xs text-stone-400 uppercase tracking-widest mb-1.5 font-sans">Telefon (SMS)</p>
+              <a href="tel:+48722089888" class="text-stone-700 hover:text-amber-700 transition duration-200">722 089 888</a>
+            </div>
+            <div>
+              <p class="text-xs text-stone-400 uppercase tracking-widest mb-1.5 font-sans">E-mail</p>
+              <a href="mailto:paulina.psonak@wp.pl" class="text-stone-700 hover:text-amber-700 transition duration-200">paulina.psonak@wp.pl</a>
+            </div>
+          </address>
+
+          <!-- CTA buttons -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="sms:722089888" class="flex items-center justify-center gap-2.5 bg-stone-800 hover:bg-stone-700 text-stone-50 px-6 py-3.5 text-sm tracking-wide transition duration-200 rounded-sm">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+              </svg>
+              Wyślij SMS
+            </a>
+            <a href="mailto:paulina.psonak@wp.pl" class="flex items-center justify-center gap-2.5 border border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-stone-50 px-6 py-3.5 text-sm tracking-wide transition duration-200 rounded-sm">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Napisz e-mail
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="reveal overflow-hidden rounded-sm border border-stone-200">
+          <iframe
+            title="Gabinet Psychoterapii SENS – mapa dojazdu, ul. Mielęckiego 10 Katowice"
+            src="https://maps.google.com/maps?q=ul.+Mieleckiego+10,+40-013+Katowice&output=embed&hl=pl"
+            width="100%"
+            height="400"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="bg-stone-800 text-stone-400 py-8 border-t border-stone-700">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <p>© 2026 Gabinet Psychoterapii i Pomocy Psychologicznej SENS &middot; mgr Paulina Psonak &middot; Katowice</p>
+      <a href="https://www.facebook.com/psychoterapiasens" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-2 hover:text-stone-200 transition duration-200">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Facebook
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Certificate modal ───────────────────────────────────────
+    var certModal = document.getElementById('cert-modal');
+
+    function openCert() {
+      certModal.classList.remove('hidden');
+      certModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCert() {
+      certModal.classList.add('hidden');
+      certModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('cert-backdrop').addEventListener('click', closeCert);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeCert();
+    });
+
+    // ── Cookie consent ──────────────────────────────────────────
+    (function () {
+      var stored = localStorage.getItem('ga_consent');
+      if (stored === null) {
+        document.getElementById('cookie-banner').classList.remove('hidden');
+      } else if (stored === 'granted') {
+        updateConsent('granted');
+      }
+    })();
+
+    function updateConsent(val) {
+      gtag('consent', 'update', { 'analytics_storage': val, 'ad_storage': val });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('ga_consent', 'granted');
+      updateConsent('granted');
+      document.getElementById('cookie-banner').classList.add('hidden');
+    }
+
+    function rejectCookies() {
+      localStorage.setItem('ga_consent', 'denied');
+      document.getElementById('cookie-banner').classList.add('hidden');
+    }
+
+    // ── Mobile nav ──────────────────────────────────────────────
+    var toggle    = document.getElementById('mobile-toggle');
+    var menu      = document.getElementById('mobile-menu');
+    var iconOpen  = document.getElementById('icon-open');
+    var iconClose = document.getElementById('icon-close');
+
+    toggle.addEventListener('click', function () {
+      var isHidden = menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden',  !isHidden);
+      iconClose.classList.toggle('hidden',  isHidden);
+      toggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Nav: hide on scroll-down past hero, reveal on scroll-up ──
+    var nav = document.getElementById('main-nav');
+    var lastScrollY = 0;
+
+    window.addEventListener('scroll', function () {
+      var currentY = window.scrollY;
+      var heroBottom = document.getElementById('hero').offsetHeight;
+
+      nav.classList.toggle('nav-shadow', currentY > 12);
+
+      if (currentY <= heroBottom) {
+        nav.classList.remove('nav--hidden');
+      } else if (currentY > lastScrollY + 4) {
+        // scrolling down past hero → hide
+        nav.classList.add('nav--hidden');
+        // collapse mobile menu if open
+        menu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      } else if (currentY < lastScrollY - 4) {
+        // scrolling up → reveal
+        nav.classList.remove('nav--hidden');
+      }
+
+      lastScrollY = currentY;
+    }, { passive: true });
+
+    // ── Scroll reveal ────────────────────────────────────────────
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.1 });
 
-        document.getElementById('cookie-accept').addEventListener('click', function() {
-          localStorage.setItem('cookie_consent', 'granted');
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted'
-          });
-          document.getElementById('cookie-banner').style.display = 'none';
-        });
-
-        document.getElementById('cookie-reject').addEventListener('click', function() {
-          localStorage.setItem('cookie_consent', 'denied');
-          document.getElementById('cookie-banner').style.display = 'none';
-        });
-      })();
-    </script>
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  </script>
 </body>
-
 </html>
